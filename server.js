@@ -58,10 +58,10 @@ app.use("/api/upload", uploadRoute);
 
 //ミドルウェア( 他のファイルを実行 )
 
-// サーバーの起動確認用
-// app.get("/", (req, res) => {
-//   res.send("hello EXPRESS");
-// });
+サーバーの起動確認用;
+app.get("/", (req, res) => {
+  res.send("サーバーが起動しました" + process.env.MONGO_URL);
+});
 
 // サーバーの起動確認用
 // app.listen(PORT, () => {
