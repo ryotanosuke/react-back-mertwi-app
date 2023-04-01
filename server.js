@@ -70,5 +70,5 @@ app.use("/api/upload", uploadRoute);
 
 // サーバーの起動確認用
 app.listen(process.env.PORT || 5000, () =>
-  console.log("サーバーが起動しました")
+  console.log("サーバーが起動しました" + process.env.MONGO_URL)
 );
