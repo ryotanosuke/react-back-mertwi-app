@@ -149,8 +149,6 @@ router.get("/timeline/:userId", async (req, res) => {
   try {
     //自分の投稿を取得
     const currentUser = await User.findById(req.params.userId);
-
-    // _idはオブジェクトの一意のidのこと
     const userPosts = await Post.find({ userId: currentUser._id });
 
     // 自分の出品を取得
@@ -166,6 +164,8 @@ router.get("/timeline/:userId", async (req, res) => {
         return Post.find({ userId: friendId });
       })
     );
+
+    console.log(friendPosts);
 
     const friendGoods = await Promise.all(
       // followingsのidを配列で回して検索
