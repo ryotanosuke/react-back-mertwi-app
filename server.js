@@ -17,7 +17,12 @@ app.use(
   cors({
     // 他サーバーのエンドポイントを許可
     // 語尾にスラッシュいらない
-    origin: "https://mertwi.vercel.app",
+    origins: [
+      "https://mertwi.vercel.app",
+      "https://mertwi-ryotanosuke.vercel.app",
+      "https://mertwi-git-main-ryotanosuke.vercel.app",
+      "mertwi-c8xhvqht6-ryotanosuke.vercel.app",
+    ],
   })
 );
 
