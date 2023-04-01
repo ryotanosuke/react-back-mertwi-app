@@ -50,6 +50,7 @@ mongoose
   // エラーの場合の処理
   .catch((err) => {
     console.log(" データベースと接続できませんでした");
+    console.log(err);
   });
 
 //全てをJsonにする
@@ -76,5 +77,5 @@ app.use("/api/upload", uploadRoute);
 
 // サーバーの起動確認用
 app.listen(process.env.PORT || 5000, () =>
-  console.log("サーバーが起動しました" + process.env.MONGO_URL)
+  console.log("サーバーが起動しました")
 );
