@@ -37,7 +37,12 @@ app.use(
 //データベース接続
 mongoose
   // 隠蔽したパスワード(mongeDB発行のURL)を代入
-  .connect(process.env.MONGO_URL)
+  .connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    ssl: true,
+    sslValidate: false,
+  })
   .then(() => {
     console.log("DBと接続中・・・");
   })
