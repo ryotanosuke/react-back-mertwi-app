@@ -43,7 +43,7 @@ mongoose
   })
   // エラーの場合の処理
   .catch((err) => {
-    console.log(err);
+    console.log(" データベースと接続できませんでした");
   });
 
 //全てをJsonにする
