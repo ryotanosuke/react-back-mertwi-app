@@ -35,6 +35,7 @@ app.use(
 // );
 
 //データベース接続
+mongoose.set("strictQuery", false);
 mongoose
   // 隠蔽したパスワード(mongeDB発行のURL)を代入
   .connect(process.env.MONGO_URL, {
@@ -48,7 +49,7 @@ mongoose
   })
   // エラーの場合の処理
   .catch((err) => {
-    console.log(" データベースと接続できませんでしたaaaaaaaaaaaaaa");
+    console.log(" データベースと接続できませんでした");
   });
 
 //全てをJsonにする
