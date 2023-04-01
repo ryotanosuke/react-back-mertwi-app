@@ -49,7 +49,9 @@ mongoose
 
 //全てをJsonにする
 app.use(express.json());
+
 app.use("/images", express.static(path.join(__dirname, "public/images")));
+
 app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/auth", authRoute);
